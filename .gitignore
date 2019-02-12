@@ -1,3 +1,5 @@
+libasm.so
+
 # sublime
 *.sublime-project
 *.sublime-workspace
