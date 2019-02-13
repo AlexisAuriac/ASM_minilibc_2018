@@ -15,7 +15,8 @@ ASFLAGS	+=	-f elf64
 
 RM		?=	rm -f
 
-SRC		=	strlen.asm
+SRC		=	strlen.asm		\
+			strchr.asm
 
 SRC		:=	$(addprefix src/, $(SRC))
 
