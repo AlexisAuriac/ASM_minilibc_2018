@@ -1,3 +1,5 @@
+*.o
+a.out
 libasm.so
 
 # sublime

@@ -1,8 +1,8 @@
 BITS 64
 
-section.text:
+section .text:
 
-global  strlen
+global  strlen:function
 
 strlen:
     push    rbp
