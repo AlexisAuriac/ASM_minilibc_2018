@@ -1,10 +1,5 @@
 BITS 64
 
-section .bss
-
-s       resq    1
-n       resq    1
-
 section .text:
 
 global memset:function
@@ -16,17 +11,14 @@ memset:
     push rbp
     mov rbp, rsp
 
-    mov [s], rdi
-    mov [n], rdx
-
     mov rcx, 0
 
 L1:
-    cmp rcx, [n]
+    cmp rcx, rdx
     je END
 
     xor rax, rax
-    mov rax, [s]
+    mov rax, rdi
     add rax, rcx ; rax now contains address to current byte
 
     mov byte [rax], sil
@@ -35,6 +27,6 @@ L1:
     jmp L1
 
 END:
-    mov rax, [s]
+    mov rax, rdi
     leave
     ret
