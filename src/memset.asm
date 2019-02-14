@@ -4,22 +4,14 @@ section .text:
 
 global  my_memset:function
 
+; rdi -> void *s
+; rsi -> int c
+; rdx -> size_t n
 my_memset:
-    push    rbp
-    mov     rbp, rsp
-
-; L1:
-    ; mov     rdi, rsi
-
-    ; dec     rdx
-    ; cmp     rdx, 0
-    ; jne     L1
+    push rbp
+    mov rbp, rsp
 
 END:
     mov rax, rdi
     leave
     ret
-
-section .data
-msg:    db  "Hello, world!", 10
-.len:   equ $ - msg
