@@ -14,7 +14,7 @@ memmove:
 
     cmp rdi, rsi
     je END
-    jb REDIRECT_MEMCPY
+    ja REDIRECT_MEMCPY
 
 REDIRECT_MEMCPY:
     call memcpy
