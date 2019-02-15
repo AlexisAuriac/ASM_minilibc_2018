@@ -2,11 +2,11 @@ BITS 64
 
 section .text:
 
-global  strcmp:function
+global  strcasecmp:function
 
 ; rdi -> const char *
 ; rsi -> const char *
-strcmp:
+strcasecmp:
     push rbp
     mov rbp, rsp
 
