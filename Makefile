@@ -19,6 +19,7 @@ SRC		=	strlen.asm		\
 			strchr.asm		\
 			memset.asm		\
 			memcpy.asm		\
+			strcmp.asm		\
 			memmove.asm
 
 SRC		:=	$(addprefix src/, $(SRC))
