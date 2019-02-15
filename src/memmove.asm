@@ -5,9 +5,9 @@ section .text:
 global memmove:function
 extern memcpy
 
-; rdi -> void *dest
-; rsi -> void *src
-; rdx -> size_t n
+; rdi -> void *
+; rsi -> void *
+; rdx -> size_t
 memmove:
     push rbp
     mov rbp, rsp
@@ -25,16 +25,11 @@ L1:
     cmp rdx, 0
     je END
 
-    xor rax, rax
     mov rax, rdi
-    add rax, rcx ; rax now contains address to dest byte
+    add rax, rcx
     dec rax
 
-    xor rbx, rbx
-    mov rbx, rsi
-    add rbx, rcx ; rbx now contains address to src byte
-    dec rbx
-    mov rbx, [rbx] ; rbx contains src byte
+    mov rbx, [rsi + rcx - 1]
 
     mov byte [rax], bl
 
