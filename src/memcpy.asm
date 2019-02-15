@@ -4,14 +4,14 @@ section .text:
 
 global memcpy:function
 
-; rdi -> void *dest
-; rsi -> void *src
-; rdx -> size_t n
+; rdi -> void *
+; rsi -> void *
+; rdx -> size_t
 memcpy:
     push rbp
     mov rbp, rsp
 
-    mov rcx, 0
+    xor rcx, rcx
 
 L1:
     cmp rcx, rdx

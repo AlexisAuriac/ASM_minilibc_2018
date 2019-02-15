@@ -4,9 +4,9 @@ section .text:
 
 global memset:function
 
-; rdi -> void *s
-; rsi -> int c
-; rdx -> size_t n
+; rdi -> void *
+; rsi -> int
+; rdx -> size_t
 memset:
     push rbp
     mov rbp, rsp

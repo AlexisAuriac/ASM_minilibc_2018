@@ -2,21 +2,23 @@ BITS 64
 
 section .text:
 
-global  strlen:function
+global strlen:function
 
+; rdi -> const char *
 strlen:
-    push    rbp
-    mov     rbp, rsp
+    push rbp
+    mov rbp, rsp
 
-    xor     rcx, rcx
+    xor rcx, rcx
 
 L1:
-    cmp     byte [rdi + rcx], 0
-    jz      END
-    inc     rcx
-    jmp     L1
+    cmp byte [rdi + rcx], 0
+    jz END
+
+    inc rcx
+    jmp L1
 
 END:
-    mov     rax, rcx
+    mov rax, rcx
     leave
     ret

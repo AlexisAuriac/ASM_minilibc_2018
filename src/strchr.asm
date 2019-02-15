@@ -2,31 +2,31 @@ BITS 64
 
 section .text:
 
-global  strchr:function
+global strchr:function
 
+; rdi -> const char *
+; rsi -> char
 strchr:
-    push    rbp
-    mov     rbp, rsp
+    push rbp
+    mov rbp, rsp
 
-    mov     rax, rdi
-    mov     rcx, rsi
+    mov rax, rdi
 
 L1:
-    movzx   rdx, byte [rax]
-    cmp     rcx, rdx
-    je      FOUND
+    cmp byte [rax], sil
+    je FOUND
 
-    cmp     rdx, 0
-    jz      NOT_FOUND
+    cmp byte [rax], 0
+    jz NOT_FOUND
 
-    inc     rax
-    jmp     L1
+    inc rax
+    jmp L1
 
 FOUND:
     leave
     ret
 
 NOT_FOUND:
-    xor     rax, rax
+    xor rax, rax
     leave
     ret
