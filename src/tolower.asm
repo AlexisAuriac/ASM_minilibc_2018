@@ -9,10 +9,10 @@ tolower:
     push rbp
     mov rbp, rsp
 
-    cmp rdi, 'A'
+    cmp dil, 'A'
     jb END
 
-    cmp rdi, 'Z'
+    cmp dil, 'Z'
     ja END
 
     add rdi, 'a' - 'A'

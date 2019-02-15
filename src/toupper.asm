@@ -9,10 +9,10 @@ toupper:
     push rbp
     mov rbp, rsp
 
-    cmp rdi, 'a'
+    cmp dil, 'a'
     jb END
 
-    cmp rdi, 'z'
+    cmp dil, 'z'
     ja END
 
     sub rdi, 'a' - 'A'
