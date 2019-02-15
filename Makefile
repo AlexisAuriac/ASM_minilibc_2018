@@ -19,20 +19,21 @@ SRC		=	strlen.asm		\
 			strchr.asm		\
 			memset.asm		\
 			memcpy.asm		\
+			rindex.asm		\
 			strcmp.asm
 
 SRC		:=	$(addprefix src/, $(SRC))
 
 OBJ		=	$(SRC:.asm=.o)
 
-NAME		=	libasm.so
+NAME	=	libasm.so
 
 all:	$(NAME)
 
 %.o: %.asm
 	$(ASM) $(ASFLAGS) $< -o $@
 
-$(NAME)	:	$(OBJ)
+$(NAME):	$(OBJ)
 	$(CC) -shared -o $(NAME) $(OBJ)
 
 clean:
