@@ -2,7 +2,7 @@ BITS 64
 
 section .text:
 
-global  strcmp:function
+global strcmp:function
 
 ; rdi -> const char *
 ; rsi -> const char *

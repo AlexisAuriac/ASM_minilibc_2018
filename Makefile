@@ -7,7 +7,7 @@
 
 CC		?=	gcc
 
-CFLAGS	+=	-Wall -Wextra -fPIC
+CFLAGS	+=	-Wall -Wextra
 
 ASM		?=	nasm
 
@@ -22,6 +22,7 @@ SRC		=	strlen.asm		\
 			strcmp.asm		\
 			memmove.asm		\
 			rindex.asm		\
+			strcasecmp.asm	\
 			toupper.asm		\
 			tolower.asm
 
