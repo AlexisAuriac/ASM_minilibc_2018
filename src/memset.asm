@@ -17,7 +17,6 @@ L1:
     cmp rcx, rdx
     je END
 
-    xor rax, rax
     mov rax, rdi
     add rax, rcx ; rax now contains address to current byte
 
