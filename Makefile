@@ -22,7 +22,8 @@ SRC		=	strlen.asm		\
 			strcmp.asm		\
 			memmove.asm		\
 			rindex.asm		\
-			toupper.asm
+			toupper.asm		\
+			tolower.asm
 
 SRC		:=	$(addprefix src/, $(SRC))
 
