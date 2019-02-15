@@ -1,38 +1,28 @@
 BITS 64
 
-section .bss
-
-dest    resq    1
-src     resq    1
-n       resq    1
-
 section .text:
 
-global my_memcpy:function
+global memcpy:function
 
 ; rdi -> void *dest
 ; rsi -> void *src
 ; rdx -> size_t n
-my_memcpy:
+memcpy:
     push rbp
     mov rbp, rsp
-
-    mov [dest], rdi
-    mov [src], rsi
-    mov [n], rdx
 
     mov rcx, 0
 
 L1:
-    cmp rcx, [n]
+    cmp rcx, rdx
     je END
 
     xor rax, rax
-    mov rax, [dest]
+    mov rax, rdi
     add rax, rcx ; rax now contains address to dest byte
 
     xor rbx, rbx
-    mov rbx, [src]
+    mov rbx, rsi
     add rbx, rcx ; rbx now contains address to src byte
     mov rbx, [rbx] ; rbx contains src byte
 
@@ -42,7 +32,7 @@ L1:
     jmp L1
 
 END:
-    mov rax, [dest]
+    mov rax, rdi
     leave
     ret
 
