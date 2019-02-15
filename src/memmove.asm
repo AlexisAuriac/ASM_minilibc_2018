@@ -2,13 +2,13 @@ BITS 64
 
 section .text:
 
-global memmove:function
+global my_memmove:function
 extern memcpy
 
 ; rdi -> void *
 ; rsi -> void *
 ; rdx -> size_t
-memmove:
+my_memmove:
     push rbp
     mov rbp, rsp
 
@@ -17,7 +17,8 @@ memmove:
     ja REDIRECT_MEMCPY
 
 REDIRECT_MEMCPY:
-    call memcpy
+    mov rax, memcpy
+    call rax
     leave
     ret
 
