@@ -17,14 +17,10 @@ L1:
     cmp rcx, rdx
     je END
 
-    xor rax, rax
     mov rax, rdi
     add rax, rcx ; rax now contains address to dest byte
 
-    xor rbx, rbx
-    mov rbx, rsi
-    add rbx, rcx ; rbx now contains address to src byte
-    mov rbx, [rbx] ; rbx contains src byte
+    mov rbx, [rsi + rcx] ; rbx contains src byte
 
     mov byte [rax], bl
 
