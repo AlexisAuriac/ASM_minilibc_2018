@@ -23,6 +23,7 @@ SRC		=	strlen.asm		\
 			memmove.asm		\
 			rindex.asm		\
 			strcasecmp.asm	\
+			strpbrk.asm		\
 			toupper.asm		\
 			tolower.asm
 
