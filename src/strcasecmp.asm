@@ -10,7 +10,7 @@ s2      resq  1
 section .text:
 
 global strcasecmp:function
-extern my_toupper
+extern toupper
 
 ; rdi -> const char *
 ; rsi -> const char *
@@ -24,13 +24,13 @@ strcasecmp:
 L1:
     mov rdi, [s2]
     mov rdi, [rdi]
-    mov rdx, my_toupper
+    mov rdx, toupper
     call rdx
     mov bl, al
 
     mov rdi, [s1]
     mov rdi, [rdi]
-    mov rdx, my_toupper
+    mov rdx, toupper
     call rdx
 
     cmp al, 0
