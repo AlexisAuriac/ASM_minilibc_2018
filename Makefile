@@ -24,6 +24,7 @@ SRC		=	strlen.asm		\
 			strncmp.asm		\
 			rindex.asm		\
 			strcasecmp.asm	\
+			strstr.asm		\
 			strpbrk.asm		\
 			strcspn.asm		\
 			toupper.asm		\
