@@ -14,7 +14,8 @@ memmove:
 
     cmp rdi, rsi
     je END
-    ja REDIRECT_MEMCPY
+    jb REDIRECT_MEMCPY
+    jmp L1
 
 REDIRECT_MEMCPY:
     mov rax, memcpy
@@ -27,14 +28,14 @@ L1:
     je END
 
     mov rax, rdi
-    add rax, rcx
+    add rax, rdx
     dec rax
 
-    mov rbx, [rsi + rcx - 1]
+    mov rbx, [rsi + rdx - 1]
 
     mov byte [rax], bl
 
-    dec rcx
+    dec rdx
     jmp L1
 
 END:
