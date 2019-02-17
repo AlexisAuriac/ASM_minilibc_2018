@@ -21,6 +21,7 @@ SRC		=	strlen.asm		\
 			memcpy.asm		\
 			strcmp.asm		\
 			memmove.asm		\
+			strncmp.asm		\
 			rindex.asm		\
 			strcasecmp.asm	\
 			strpbrk.asm		\
