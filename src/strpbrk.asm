@@ -37,9 +37,7 @@ L1:
     ja FOUND
     jb FOUND
 
-    mov rax, [s]
-    inc rax
-    mov [s], rax
+    inc qword [s]
     jmp L1
 
 FOUND:
