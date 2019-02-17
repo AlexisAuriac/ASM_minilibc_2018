@@ -50,9 +50,7 @@ L1:
     cmp rax, 0
     je FOUND
 
-    mov rax, [haystack]
-    inc rax
-    mov [haystack], rax
+    inc qword [haystack]
     jmp L1
 
 FOUND:
