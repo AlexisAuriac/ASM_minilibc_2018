@@ -24,6 +24,9 @@ strstr:
     mov [haystack], rdi
     mov [needle], rsi
 
+    cmp byte [rsi], 0
+    je FOUND
+
     mov rdi, rsi
     mov rax, strlen
     call rax
