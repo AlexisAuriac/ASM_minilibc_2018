@@ -5,13 +5,11 @@
 ## Makefile for libasm.
 ##
 
-CC		?=	gcc
-
-CFLAGS	+=	-Wall -Wextra
-
 ASM		?=	nasm
 
 ASFLAGS	+=	-f elf64
+
+LD		?=	ld
 
 RM		?=	rm -f
 
@@ -42,7 +40,7 @@ all:	$(NAME)
 	$(ASM) $(ASFLAGS) $< -o $@
 
 $(NAME):	$(OBJ)
-	$(CC) -shared -o $(NAME) $(OBJ)
+	$(LD) --exclude-libs libc -shared -o $(NAME) $(OBJ)
 
 clean:
 	$(RM) $(OBJ)
