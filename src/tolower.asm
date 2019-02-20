@@ -2,10 +2,10 @@ BITS 64
 
 section .text:
 
-global  tolower:function
+global my_tolower:function
 
 ; rdi -> char
-tolower:
+my_tolower:
     push rbp
     mov rbp, rsp
 
