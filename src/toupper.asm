@@ -2,10 +2,10 @@ BITS 64
 
 section .text:
 
-global  toupper:function
+global my_toupper:function
 
 ; rdi -> char
-toupper:
+my_toupper:
     push rbp
     mov rbp, rsp
 
