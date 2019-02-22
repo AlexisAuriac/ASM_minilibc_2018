@@ -11,6 +11,8 @@ ASFLAGS	+=	-f elf64
 
 LD		?=	ld
 
+LD_FLAGS+=	-shared
+
 RM		?=	rm -f
 
 SRC		=	strlen.asm		\
@@ -40,7 +42,7 @@ all:	$(NAME)
 	$(ASM) $(ASFLAGS) $< -o $@
 
 $(NAME):	$(OBJ)
-	$(LD) --exclude-libs libc -shared -o $(NAME) $(OBJ)
+	$(LD) $(LD_FLAGS) -o $(NAME) $(OBJ)
 
 clean:
 	$(RM) $(OBJ)
