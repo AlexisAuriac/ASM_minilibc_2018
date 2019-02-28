@@ -7,7 +7,7 @@ section .bss
 s resq 1
 reject resb 1
 
-section .text:
+section .text
 
 global strcspn:function
 extern strchr

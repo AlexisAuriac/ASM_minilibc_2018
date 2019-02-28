@@ -5,7 +5,7 @@ section .bss
 char resb 1
 res resq 1
 
-section .text:
+section .text
 
 global rindex:function
 extern strchr

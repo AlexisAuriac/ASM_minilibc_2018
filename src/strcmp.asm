@@ -1,6 +1,6 @@
 BITS 64
 
-section .text:
+section .text
 
 global strcmp:function
 

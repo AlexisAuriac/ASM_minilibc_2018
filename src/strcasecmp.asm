@@ -7,7 +7,7 @@ section .bss
 s1      resq  1
 s2      resq  1
 
-section .text:
+section .text
 
 global strcasecmp:function
 extern my_toupper

@@ -8,7 +8,7 @@ haystack resq 1
 needle resq 1
 len resq 1
 
-section .text:
+section .text
 
 global strstr:function
 extern strlen
