@@ -1,6 +1,9 @@
 *.o
+*.gcda
+*.gcno
 a.out
 libasm.so
+units
 
 # sublime
 *.sublime-project
