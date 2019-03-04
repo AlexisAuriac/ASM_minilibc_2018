@@ -5,7 +5,8 @@
 ## Makefile for unitests.
 ##
 
-SRC_UT	=	test_strlen.c
+SRC_UT	=	test_strlen.c	\
+			test_strchr.c
 
 SRC_UT	:=	$(addprefix tests/, $(SRC_UT))
 
