@@ -13,7 +13,7 @@
 Test(test_rindex, base)
 {
     void *lib = dlopen(LIB, RTLD_LAZY);
-    char *(*my_rindex)(const char *, int c) = dlsym(lib, "rindex");
+    char *(*my_rindex)(const char *, int) = dlsym(lib, "rindex");
     const char *str = "Hello, World!";
 
     cr_assert_neq(my_rindex, NULL);

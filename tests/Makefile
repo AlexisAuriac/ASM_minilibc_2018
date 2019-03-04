@@ -7,7 +7,8 @@
 
 SRC_UT	=	test_strlen.c	\
 			test_strchr.c	\
-			test_rindex.c
+			test_rindex.c	\
+			test_memset.c
 
 SRC_UT	:=	$(addprefix tests/, $(SRC_UT))
 

@@ -13,7 +13,7 @@
 Test(test_strchr, base)
 {
     void *lib = dlopen(LIB, RTLD_LAZY);
-    char *(*my_strchr)(const char *, int c) = dlsym(lib, "strchr");
+    char *(*my_strchr)(const char *, int) = dlsym(lib, "strchr");
     const char *str = "Hello, World!";
 
     cr_assert_neq(my_strchr, NULL);
