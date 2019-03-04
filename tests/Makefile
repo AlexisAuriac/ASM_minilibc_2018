@@ -6,7 +6,8 @@
 ##
 
 SRC_UT	=	test_strlen.c	\
-			test_strchr.c
+			test_strchr.c	\
+			test_rindex.c
 
 SRC_UT	:=	$(addprefix tests/, $(SRC_UT))
 
