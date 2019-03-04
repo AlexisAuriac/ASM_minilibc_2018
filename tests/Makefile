@@ -31,8 +31,6 @@ $(NAME): $(OBJ) $(LIB)
 
 clean:
 		$(RM) $(OBJ)
-		$(RM) $(SRC:.asm=.gcda)
-		$(RM) $(SRC:.asm=.gcno)
 		$(RM) $(SRC_UT:.c=.gcda)
 		$(RM) $(SRC_UT:.c=.gcno)
 

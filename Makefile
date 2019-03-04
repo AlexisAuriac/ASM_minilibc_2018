@@ -46,9 +46,11 @@ $(NAME):	$(OBJ)
 
 clean:
 	$(RM) $(OBJ)
+	make clean -C tests
 
 fclean:	clean
 	$(RM) $(NAME)
+	make fclean -C tests
 
 re:	fclean	all
 

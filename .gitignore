@@ -1,6 +1,7 @@
 *.o
 *.gcda
 *.gcno
+*.gcov
 a.out
 libasm.so
 units
