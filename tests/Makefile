@@ -5,36 +5,28 @@
 ## Makefile for unitests.
 ##
 
-ASM		?=	nasm
-
-ASFLAGS	+=	-f elf64
-
-SRC		=	strlen.asm
-
 SRC_UT	=	test_strlen.c
-
-SRC		:=	$(addprefix ../src/, $(SRC))
 
 SRC_UT	:=	$(addprefix tests/, $(SRC_UT))
 
 OBJ		=	$(SRC:.asm=.o)		\
 			$(SRC_UT:.c=.o)
 
-CFLAGS		+=	-Wall -Wextra --coverage
+CFLAGS	+=	-Wall -Wextra --coverage -DLIB=\"../libasm.so\"
 
-LDFLAGS		+=	-lcriterion -lgcov
+LDFLAGS	+=	-ldl -lcriterion -lgcov
 
-LIB			=	libasm.so
+LIB		=	libasm.so
 
-NAME		=	units
+NAME	=	units
 
 all:	$(NAME)
 
-%.o: %.asm
-	$(ASM) $(ASFLAGS) $< -o $@
+$(LIB):
+	make $(LIB) -C ../
 
-$(NAME): $(OBJ)
-		$(CC) -fno-builtin -o $(NAME) $(OBJ) $(LDFLAGS)
+$(NAME): $(OBJ) $(LIB)
+		$(CC) -o $(NAME) $(OBJ) $(LDFLAGS)
 		./$(NAME)
 
 clean:
