@@ -10,7 +10,8 @@ SRC_UT	=	test_strlen.c	\
 			test_rindex.c	\
 			test_memset.c	\
 			test_memcpy.c	\
-			test_memmove.c
+			test_memmove.c	\
+			test_strcmp.c
 
 SRC_UT	:=	$(addprefix tests/, $(SRC_UT))
 
