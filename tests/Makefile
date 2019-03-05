@@ -5,14 +5,15 @@
 ## Makefile for unitests.
 ##
 
-SRC_UT	=	test_strlen.c	\
-			test_strchr.c	\
-			test_rindex.c	\
-			test_memset.c	\
-			test_memcpy.c	\
-			test_memmove.c	\
-			test_strcmp.c	\
-			test_strncmp.c
+SRC_UT	=	test_strlen.c		\
+			test_strchr.c		\
+			test_memset.c		\
+			test_memcpy.c		\
+			test_strcmp.c		\
+			test_memmove.c		\
+			test_strncmp.c		\
+			test_strcasecmp.c	\
+			test_rindex.c
 
 SRC_UT	:=	$(addprefix tests/, $(SRC_UT))
 
