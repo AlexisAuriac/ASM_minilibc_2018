@@ -14,7 +14,8 @@ SRC_UT	=	test_strlen.c		\
 			test_strncmp.c		\
 			test_strcasecmp.c	\
 			test_rindex.c		\
-			test_strstr.c
+			test_strstr.c		\
+			test_strpbrk.c
 
 SRC_UT	:=	$(addprefix tests/, $(SRC_UT))
 

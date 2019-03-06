@@ -27,5 +27,4 @@ Test(test_memmove, base)
     cr_assert_str_eq(str, "abcde");
     cr_assert_str_eq(my_memmove(str + 1, str, 3), "abce");
     dlclose(lib);
-    dlclose(lib);
 }
