@@ -20,10 +20,9 @@ SRC_UT	=	test_strlen.c		\
 
 SRC_UT	:=	$(addprefix tests/, $(SRC_UT))
 
-OBJ		=	$(SRC:.asm=.o)		\
-			$(SRC_UT:.c=.o)
+OBJ		=	$(SRC_UT:.c=.o)
 
-CFLAGS	+=	-Wall -Wextra --coverage -DLIB=\"../libasm.so\"
+CFLAGS	+=	-Wall -Wextra --coverage
 
 LDFLAGS	+=	-ldl -lcriterion -lgcov
 
@@ -31,22 +30,26 @@ LIB		=	libasm.so
 
 NAME	=	units
 
-all:	$(NAME)
+all: $(NAME)
 
 $(LIB):
 	make $(LIB) -C ../
 
 $(NAME): $(OBJ) $(LIB)
-		$(CC) -o $(NAME) $(OBJ) $(LDFLAGS)
-		./$(NAME)
+	$(CC) -o $(NAME) $(OBJ) $(LDFLAGS)
+	./$(NAME)
+
+bonus: $(OBJ) $(LIB)
+	$(CC) -o $(NAME) $(OBJ) $(LDFLAGS)
+	./$(NAME)
 
 clean:
-		$(RM) $(OBJ)
-		$(RM) $(SRC_UT:.c=.gcda)
-		$(RM) $(SRC_UT:.c=.gcno)
+	$(RM) $(OBJ)
+	$(RM) $(SRC_UT:.c=.gcda)
+	$(RM) $(SRC_UT:.c=.gcno)
 
 fclean: clean
-		$(RM) $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 

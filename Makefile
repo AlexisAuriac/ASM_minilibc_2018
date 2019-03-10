@@ -44,17 +44,26 @@ all:	$(NAME)
 $(NAME):	$(OBJ)
 	$(LD) $(LD_FLAGS) -o $(NAME) $(OBJ)
 
+bonus:
+	make -C bonus
+
 clean:
 	$(RM) $(OBJ)
+	make clean -C bonus
 	make clean -C tests
 
 fclean:	clean
 	$(RM) $(NAME)
+	make fclean -C bonus
 	make fclean -C tests
 
 re:	fclean	all
 
 tests_run:
-	make -C tests
+	CFLAGS+=' -DLIB=\"../libasm.so\" ' make -C tests
 
-.PHONY:	all clean fclean re
+bonus_tests_run:
+	make bonus
+	CFLAGS+=' -DLIB=\"../bonus/libasm.so\" ' make bonus -C tests
+
+.PHONY:	all bonus tests_run bonus_tests_run clean fclean re
