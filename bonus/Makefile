@@ -17,7 +17,7 @@ SRC		=	strlen.s	\
 			strchr.s	\
 			memset.s	\
 			memcpy.s	\
-			# memmove.s
+			strcmp.s
 
 SRC		:=	$(addprefix src/, $(SRC))
 
