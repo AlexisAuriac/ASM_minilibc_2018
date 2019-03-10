@@ -26,9 +26,9 @@ SRC		=	strlen.asm		\
 			strcasecmp.asm	\
 			strstr.asm		\
 			strpbrk.asm		\
-			strcspn.asm		\
 			toupper.asm		\
 			tolower.asm
+			# strcspn.asm		\
 
 SRC		:=	$(addprefix src/, $(SRC))
 
